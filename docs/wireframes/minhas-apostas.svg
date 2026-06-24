@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="520" viewBox="0 0 860 520" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="860" height="520" fill="#f4f5f7"/>
+  <!-- Navbar -->
+  <rect x="0" y="0" width="860" height="56" fill="#e3e6ea"/>
+  <circle cx="30" cy="28" r="10" fill="#b9c0c9"/>
+  <rect x="48" y="20" width="150" height="16" rx="4" fill="#9aa3ad"/>
+  <rect x="640" y="16" width="90" height="24" rx="12" fill="#ffe0a3"/>
+
+  <!-- Título -->
+  <rect x="30" y="80" width="220" height="22" rx="4" fill="#7b848e"/>
+
+  <!-- Cards resumo -->
+  <rect x="30" y="120" width="256" height="70" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+  <rect x="302" y="120" width="256" height="70" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+  <rect x="574" y="120" width="256" height="70" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+  <rect x="48" y="136" width="100" height="10" rx="3" fill="#c2c8cf"/>
+  <rect x="48" y="156" width="120" height="20" rx="4" fill="#7b848e"/>
+  <rect x="320" y="136" width="100" height="10" rx="3" fill="#c2c8cf"/>
+  <rect x="320" y="156" width="120" height="20" rx="4" fill="#18b16a"/>
+  <rect x="592" y="136" width="100" height="10" rx="3" fill="#c2c8cf"/>
+  <rect x="592" y="156" width="60" height="20" rx="4" fill="#7b848e"/>
+
+  <!-- Tabela -->
+  <rect x="30" y="210" width="800" height="240" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+  <!-- header -->
+  <rect x="30" y="210" width="800" height="34" rx="10" fill="#eef1f4"/>
+  <rect x="48" y="222" width="80" height="10" rx="3" fill="#9aa3ad"/>
+  <rect x="300" y="222" width="60" height="10" rx="3" fill="#9aa3ad"/>
+  <rect x="430" y="222" width="50" height="10" rx="3" fill="#9aa3ad"/>
+  <rect x="540" y="222" width="40" height="10" rx="3" fill="#9aa3ad"/>
+  <rect x="640" y="222" width="70" height="10" rx="3" fill="#9aa3ad"/>
+  <rect x="760" y="222" width="50" height="10" rx="3" fill="#9aa3ad"/>
+  <!-- rows -->
+  <g fill="#d2d7dd">
+    <rect x="48" y="262" width="180" height="10" rx="3"/>
+    <rect x="300" y="262" width="80" height="10" rx="3"/>
+    <rect x="430" y="262" width="50" height="10" rx="3"/>
+    <rect x="540" y="262" width="40" height="10" rx="3"/>
+    <rect x="760" y="262" width="50" height="10" rx="3"/>
+  </g>
+  <rect x="640" y="256" width="60" height="18" rx="9" fill="#bdeccd"/>
+  <line x1="30" y1="292" x2="830" y2="292" stroke="#eceff2"/>
+  <g fill="#d2d7dd">
+    <rect x="48" y="312" width="180" height="10" rx="3"/>
+    <rect x="300" y="312" width="80" height="10" rx="3"/>
+    <rect x="430" y="312" width="50" height="10" rx="3"/>
+    <rect x="540" y="312" width="40" height="10" rx="3"/>
+    <rect x="760" y="312" width="50" height="10" rx="3"/>
+  </g>
+  <rect x="640" y="306" width="60" height="18" rx="9" fill="#f2c7c8"/>
+  <line x1="30" y1="342" x2="830" y2="342" stroke="#eceff2"/>
+  <g fill="#d2d7dd">
+    <rect x="48" y="362" width="180" height="10" rx="3"/>
+    <rect x="300" y="362" width="80" height="10" rx="3"/>
+    <rect x="430" y="362" width="50" height="10" rx="3"/>
+    <rect x="540" y="362" width="40" height="10" rx="3"/>
+    <rect x="760" y="362" width="50" height="10" rx="3"/>
+  </g>
+  <rect x="640" y="356" width="60" height="18" rx="9" fill="#ffe0a3"/>
+
+  <!-- Legenda -->
+  <text x="30" y="486" font-size="13" fill="#6b7480">Wireframe — Minhas Apostas (UC05)</text>
+  <text x="30" y="506" font-size="11" fill="#94a0ab">Resumo (total apostado/ganho/qtd) + tabela com situação (ganha/perdida/pendente)</text>
+</svg>

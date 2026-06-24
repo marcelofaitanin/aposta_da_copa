@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CopaApostas 2026 — Layout HTML (Login)</title>
+  <!-- Mockup HTML estático da TELA DE LOGIN (item 3 do trabalho). -->
+  <style>
+    :root {
+      --bg: #0f1623; --card: #1b2740; --card-2: #223052; --border: #2c3c5e;
+      --text: #e6ecf7; --muted: #9babc7; --primary: #18b16a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, #1c2c4a 0%, var(--bg) 55%);
+      color: var(--text); min-height: 100vh;
+    }
+    .navbar {
+      display: flex; align-items: center; gap: 1.5rem; padding: 0.85rem 1.5rem;
+      background: rgba(13,20,34,0.85); border-bottom: 1px solid var(--border);
+    }
+    .brand { font-size: 1.15rem; font-weight: 700; flex: 1; }
+    .brand strong { color: var(--primary); }
+    .btn {
+      border: 1px solid var(--border); border-radius: 10px; padding: 0.55rem 1rem;
+      font-size: 0.92rem; font-weight: 600; cursor: pointer; background: transparent;
+      color: var(--text); text-decoration: none;
+    }
+    .btn-primary { background: var(--primary); color: #06281a; border-color: transparent; }
+    .auth-wrap { display: flex; justify-content: center; padding: 3rem 1.25rem; }
+    .auth-card {
+      width: 100%; max-width: 420px; padding: 2rem; background: var(--card);
+      border: 1px solid var(--border); border-radius: 14px;
+    }
+    .page-title { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    .page-subtitle { color: var(--muted); margin-bottom: 1.5rem; }
+    .field { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+    .field label { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+    .input {
+      background: #0e1626; border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.65rem 0.8rem; color: var(--text); font-size: 0.95rem; width: 100%;
+    }
+    .btn-block { width: 100%; }
+    .auth-foot { margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--muted); }
+    .auth-foot a { color: var(--primary); font-weight: 600; text-decoration: none; }
+    .demo-box {
+      margin-top: 1.5rem; padding: 0.85rem 1rem; background: #0e1626;
+      border: 1px dashed var(--border); border-radius: 10px; display: flex;
+      flex-direction: column; gap: 0.25rem; font-size: 0.82rem; color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">⚽ Copa<strong>Apostas</strong> 2026</div>
+    <a href="#" class="btn">Entrar</a>
+    <a href="#" class="btn btn-primary">Criar conta</a>
+  </header>
+
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <h1 class="page-title">Entrar</h1>
+      <p class="page-subtitle">Acesse sua conta para apostar nos jogos da Copa 2026.</p>
+
+      <form>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" class="input" type="email" placeholder="voce@email.com" />
+        </div>
+        <div class="field">
+          <label for="password">Senha</label>
+          <input id="password" class="input" type="password" placeholder="••••••" />
+        </div>
+        <button class="btn btn-primary btn-block" type="button">Entrar</button>
+      </form>
+
+      <p class="auth-foot">Não tem conta? <a href="#">Criar conta</a></p>
+
+      <div class="demo-box">
+        <strong>Contas de teste:</strong>
+        <span>👤 joao@email.com / 123456</span>
+        <span>🛠️ admin@copa.com / admin123</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

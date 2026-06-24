@@ -1,0 +1,40 @@
+<div class="auth-wrap">
+  <div class="card auth-card">
+    <h1 class="page-title">Criar conta</h1>
+    <p class="page-subtitle">
+      Cadastre-se e ganhe <strong>R$ 1.000</strong> em moedas virtuais para apostar.
+    </p>
+
+    @if (error()) {
+      <div class="alert alert-error">{{ error() }}</div>
+    }
+
+    <form (ngSubmit)="submit()">
+      <div class="field">
+        <label for="name">Nome</label>
+        <input id="name" class="input" name="name" [(ngModel)]="name" required
+               placeholder="Seu nome" />
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" class="input" type="email" name="email" [(ngModel)]="email"
+               required placeholder="voce@email.com" />
+      </div>
+
+      <div class="field">
+        <label for="password">Senha</label>
+        <input id="password" class="input" type="password" name="password"
+               [(ngModel)]="password" required placeholder="mínimo 6 caracteres" />
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit" [disabled]="loading()">
+        {{ loading() ? 'Criando...' : 'Criar conta' }}
+      </button>
+    </form>
+
+    <p class="auth-foot muted">
+      Já tem conta? <a routerLink="/login">Entrar</a>
+    </p>
+  </div>
+</div>

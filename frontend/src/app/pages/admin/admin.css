@@ -1,0 +1,41 @@
+.table-card {
+  overflow-x: auto;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.admin-table th {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+.game-cell {
+  font-weight: 600;
+}
+.score-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.score-input {
+  width: 56px;
+  text-align: center;
+  padding: 0.4rem;
+}
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.82rem;
+}

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="600" viewBox="0 0 860 600" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="860" height="600" fill="#f4f5f7"/>
+  <!-- Navbar -->
+  <rect x="0" y="0" width="860" height="56" fill="#e3e6ea"/>
+  <circle cx="30" cy="28" r="10" fill="#b9c0c9"/>
+  <rect x="48" y="20" width="150" height="16" rx="4" fill="#9aa3ad"/>
+  <rect x="320" y="20" width="50" height="14" rx="4" fill="#c2c8cf"/>
+  <rect x="384" y="20" width="100" height="14" rx="4" fill="#c2c8cf"/>
+  <rect x="640" y="16" width="90" height="24" rx="12" fill="#ffe0a3"/>
+  <rect x="742" y="16" width="60" height="24" rx="6" fill="#cfd5db"/>
+
+  <!-- Título -->
+  <rect x="30" y="80" width="220" height="22" rx="4" fill="#7b848e"/>
+  <rect x="30" y="110" width="420" height="12" rx="3" fill="#c2c8cf"/>
+
+  <!-- Cards de jogos (grid 3) -->
+  <g>
+    <!-- card 1 -->
+    <rect x="30" y="146" width="250" height="190" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+    <rect x="48" y="164" width="90" height="16" rx="8" fill="#cdd9ee"/>
+    <rect x="214" y="164" width="48" height="16" rx="8" fill="#bdeccd"/>
+    <rect x="60" y="200" width="80" height="16" rx="4" fill="#7b848e"/>
+    <text x="150" y="214" font-size="14" fill="#aab1b9">x</text>
+    <rect x="166" y="200" width="80" height="16" rx="4" fill="#7b848e"/>
+    <rect x="48" y="232" width="200" height="10" rx="3" fill="#d2d7dd"/>
+    <rect x="48" y="248" width="170" height="10" rx="3" fill="#d2d7dd"/>
+    <!-- odds -->
+    <rect x="48" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <rect x="118" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <rect x="188" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <text x="79" y="298" font-size="9" fill="#8b939c" text-anchor="middle">CASA</text>
+    <text x="149" y="298" font-size="9" fill="#8b939c" text-anchor="middle">EMPATE</text>
+    <text x="219" y="298" font-size="9" fill="#8b939c" text-anchor="middle">FORA</text>
+    <text x="79" y="316" font-size="13" fill="#c79200" text-anchor="middle" font-weight="bold">1.65</text>
+    <text x="149" y="316" font-size="13" fill="#c79200" text-anchor="middle" font-weight="bold">3.70</text>
+    <text x="219" y="316" font-size="13" fill="#c79200" text-anchor="middle" font-weight="bold">5.20</text>
+  </g>
+  <!-- card 2 (clone visual) -->
+  <use href="#cardClone" />
+  <g>
+    <rect x="305" y="146" width="250" height="190" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+    <rect x="323" y="164" width="90" height="16" rx="8" fill="#cdd9ee"/>
+    <rect x="335" y="200" width="80" height="16" rx="4" fill="#7b848e"/>
+    <rect x="441" y="200" width="80" height="16" rx="4" fill="#7b848e"/>
+    <rect x="323" y="232" width="200" height="10" rx="3" fill="#d2d7dd"/>
+    <rect x="323" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <rect x="393" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <rect x="463" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+  </g>
+  <!-- card 3 -->
+  <g>
+    <rect x="580" y="146" width="250" height="190" rx="10" fill="#ffffff" stroke="#d4d9df"/>
+    <rect x="598" y="164" width="90" height="16" rx="8" fill="#cdd9ee"/>
+    <rect x="610" y="200" width="80" height="16" rx="4" fill="#7b848e"/>
+    <rect x="716" y="200" width="80" height="16" rx="4" fill="#7b848e"/>
+    <rect x="598" y="232" width="200" height="10" rx="3" fill="#d2d7dd"/>
+    <rect x="598" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <rect x="668" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+    <rect x="738" y="280" width="62" height="44" rx="8" fill="#eef1f4" stroke="#cdd3d9"/>
+  </g>
+
+  <!-- Modal ticket de aposta -->
+  <rect x="0" y="0" width="860" height="600" fill="#10141c" opacity="0.45"/>
+  <rect x="300" y="200" width="260" height="240" rx="12" fill="#ffffff" stroke="#cdd3d9"/>
+  <rect x="324" y="224" width="150" height="18" rx="4" fill="#7b848e"/>
+  <rect x="324" y="252" width="150" height="10" rx="3" fill="#c2c8cf"/>
+  <rect x="324" y="278" width="212" height="26" rx="6" fill="#eef4f0" stroke="#bfe0cd"/>
+  <rect x="324" y="316" width="90" height="10" rx="3" fill="#aab1b9"/>
+  <rect x="324" y="330" width="212" height="32" rx="6" fill="#f0f2f4" stroke="#cdd3d9"/>
+  <rect x="324" y="374" width="212" height="22" rx="6" fill="#eef4f0"/>
+  <rect x="392" y="410" width="64" height="20" rx="6" fill="#d3d8de"/>
+  <rect x="464" y="410" width="72" height="20" rx="6" fill="#18b16a"/>
+  <text x="430" y="186" font-size="12" fill="#e7ebf0" text-anchor="middle">Ticket de aposta (UC04)</text>
+
+  <!-- Legenda -->
+  <text x="30" y="566" font-size="13" fill="#cdd3da">Wireframe — Tela de Jogos + Ticket de Aposta (UC03 e UC04)</text>
+  <text x="30" y="586" font-size="11" fill="#aab4bd">Grid de jogos com odds clicáveis • Modal: valor, retorno potencial e confirmar</text>
+</svg>

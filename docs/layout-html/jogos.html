@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CopaApostas 2026 — Layout HTML (Tela de Jogos)</title>
+  <!--
+    Mockup HTML estático da TELA DE JOGOS (item 3 do trabalho).
+    Reproduz, em HTML/CSS puro (sem Angular), o layout implementado no
+    componente frontend/src/app/pages/games. Abra direto no navegador.
+  -->
+  <style>
+    :root {
+      --bg: #0f1623; --card: #1b2740; --card-2: #223052; --border: #2c3c5e;
+      --text: #e6ecf7; --muted: #9babc7; --primary: #18b16a; --accent: #ffc94d;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, #1c2c4a 0%, var(--bg) 55%);
+      color: var(--text); min-height: 100vh;
+    }
+    .navbar {
+      display: flex; align-items: center; gap: 1.5rem; padding: 0.85rem 1.5rem;
+      background: rgba(13,20,34,0.85); border-bottom: 1px solid var(--border);
+    }
+    .brand { font-size: 1.15rem; font-weight: 700; }
+    .brand strong { color: var(--primary); }
+    .nav-links { display: flex; gap: 0.4rem; flex: 1; }
+    .nav-links a {
+      padding: 0.45rem 0.8rem; border-radius: 8px; color: var(--muted);
+      font-weight: 600; font-size: 0.92rem; text-decoration: none;
+    }
+    .nav-links a.active { background: var(--card-2); color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .balance {
+      background: var(--card); border: 1px solid var(--border); padding: 0.4rem 0.7rem;
+      border-radius: 999px; font-weight: 700; font-size: 0.85rem; color: var(--accent);
+    }
+    .page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    .page-title { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    .page-subtitle { color: var(--muted); margin-bottom: 1.75rem; }
+    .games-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .game-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.25rem; display: flex; flex-direction: column; gap: 0.9rem;
+    }
+    .game-head { display: flex; justify-content: space-between; align-items: center; }
+    .badge {
+      display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px;
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    }
+    .badge-stage { background: #21345c; color: #bcd2ff; }
+    .badge-win { background: rgba(24,177,106,0.15); color: var(--primary); }
+    .teams { display: flex; align-items: center; justify-content: center; gap: 0.75rem; text-align: center; }
+    .team { flex: 1; font-size: 1.05rem; font-weight: 700; }
+    .vs { color: var(--muted); font-weight: 700; }
+    .game-meta { font-size: 0.82rem; line-height: 1.4; color: var(--muted); }
+    .odds-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: auto; }
+    .odd-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+      background: var(--card-2); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.55rem 0.3rem; cursor: pointer; color: var(--text);
+    }
+    .odd-btn:hover { border-color: var(--primary); }
+    .odd-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; }
+    .odd-value { font-size: 1.05rem; font-weight: 800; color: var(--accent); }
+    .footer { border-top: 1px solid var(--border); padding: 1.25rem; text-align: center; color: var(--muted); font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">⚽ Copa<strong>Apostas</strong> 2026</div>
+    <nav class="nav-links">
+      <a href="#" class="active">Jogos</a>
+      <a href="#">Minhas Apostas</a>
+    </nav>
+    <div class="nav-right">
+      <span class="balance">💰 R$ 900,00</span>
+      <span style="color:var(--muted);font-size:0.88rem;">Olá, João</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="page-title">Jogos da Copa 2026</h1>
+    <p class="page-subtitle">Escolha um jogo, faça seu palpite e aposte com moedas virtuais. Cotações a partir de 25/06/2026.</p>
+
+    <div class="games-grid">
+      <!-- Card de jogo 1 -->
+      <article class="game-card">
+        <div class="game-head">
+          <span class="badge badge-stage">Fase de Grupos</span>
+          <span class="badge badge-win">Aberto</span>
+        </div>
+        <div class="teams">
+          <div class="team">Brasil</div>
+          <div class="vs">×</div>
+          <div class="team">Croácia</div>
+        </div>
+        <div class="game-meta">
+          📅 25/06/2026 19:00<br />
+          📍 SoFi Stadium — Los Angeles, EUA
+        </div>
+        <div class="odds-row">
+          <button class="odd-btn"><span class="odd-label">Casa</span><span class="odd-value">1.65</span></button>
+          <button class="odd-btn"><span class="odd-label">Empate</span><span class="odd-value">3.70</span></button>
+          <button class="odd-btn"><span class="odd-label">Fora</span><span class="odd-value">5.20</span></button>
+        </div>
+      </article>
+
+      <!-- Card de jogo 2 -->
+      <article class="game-card">
+        <div class="game-head">
+          <span class="badge badge-stage">Fase de Grupos</span>
+          <span class="badge badge-win">Aberto</span>
+        </div>
+        <div class="teams">
+          <div class="team">Argentina</div>
+          <div class="vs">×</div>
+          <div class="team">Nigéria</div>
+        </div>
+        <div class="game-meta">
+          📅 25/06/2026 22:00<br />
+          📍 Estadio Azteca — Cidade do México, México
+        </div>
+        <div class="odds-row">
+          <button class="odd-btn"><span class="odd-label">Casa</span><span class="odd-value">1.50</span></button>
+          <button class="odd-btn"><span class="odd-label">Empate</span><span class="odd-value">4.00</span></button>
+          <button class="odd-btn"><span class="odd-label">Fora</span><span class="odd-value">6.50</span></button>
+        </div>
+      </article>
+
+      <!-- Card de jogo 3 -->
+      <article class="game-card">
+        <div class="game-head">
+          <span class="badge badge-stage">Final</span>
+          <span class="badge badge-win">Aberto</span>
+        </div>
+        <div class="teams">
+          <div class="team">Brasil</div>
+          <div class="vs">×</div>
+          <div class="team">França</div>
+        </div>
+        <div class="game-meta">
+          📅 19/07/2026 16:00<br />
+          📍 MetLife Stadium — Nova York/Nova Jersey, EUA
+        </div>
+        <div class="odds-row">
+          <button class="odd-btn"><span class="odd-label">Casa</span><span class="odd-value">2.45</span></button>
+          <button class="odd-btn"><span class="odd-label">Empate</span><span class="odd-value">3.20</span></button>
+          <button class="odd-btn"><span class="odd-label">Fora</span><span class="odd-value">2.85</span></button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    CopaApostas 2026 — Projeto acadêmico (MEAN Stack). Apostas com moedas <strong>virtuais</strong>, sem dinheiro real. 🔞 Jogue com responsabilidade.
+  </footer>
+</body>
+</html>

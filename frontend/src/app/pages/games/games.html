@@ -1,0 +1,97 @@
+<div class="page">
+  <h1 class="page-title">Jogos da Copa 2026</h1>
+  <p class="page-subtitle">
+    Escolha um jogo, faça seu palpite e aposte com moedas virtuais. Cotações a partir de 25/06/2026.
+  </p>
+
+  @if (feedback(); as fb) {
+    <div class="alert" [class.alert-success]="fb.type === 'success'" [class.alert-error]="fb.type === 'error'">
+      {{ fb.text }}
+    </div>
+  }
+
+  @if (loading()) {
+    <p class="muted">Carregando jogos...</p>
+  } @else if (games().length === 0) {
+    <p class="muted">Nenhum jogo cadastrado.</p>
+  } @else {
+    <div class="games-grid">
+      @for (game of games(); track game._id) {
+        <div class="card game-card">
+          <div class="game-head">
+            <span class="badge badge-stage">{{ game.stage }}</span>
+            @if (game.status === 'encerrado') {
+              <span class="badge badge-lose">Encerrado</span>
+            } @else if (!isOpen(game)) {
+              <span class="badge badge-pending">Em andamento</span>
+            } @else {
+              <span class="badge badge-win">Aberto</span>
+            }
+          </div>
+
+          <div class="teams">
+            <div class="team">{{ game.homeTeam }}</div>
+            <div class="vs">×</div>
+            <div class="team">{{ game.awayTeam }}</div>
+          </div>
+
+          <div class="game-meta muted">
+            📅 {{ game.matchDate | date: 'dd/MM/yyyy HH:mm' }}<br />
+            📍 {{ game.stadium }} — {{ game.city }}
+          </div>
+
+          @if (game.status === 'encerrado') {
+            <div class="final-score">
+              Placar final: <strong>{{ game.score.home }} × {{ game.score.away }}</strong>
+            </div>
+          }
+
+          <div class="odds-row">
+            <button class="odd-btn" [disabled]="!isOpen(game)" (click)="choose(game, 'home')">
+              <span class="odd-label">Casa</span>
+              <span class="odd-value">{{ game.odds.home | number: '1.2-2' }}</span>
+            </button>
+            <button class="odd-btn" [disabled]="!isOpen(game)" (click)="choose(game, 'draw')">
+              <span class="odd-label">Empate</span>
+              <span class="odd-value">{{ game.odds.draw | number: '1.2-2' }}</span>
+            </button>
+            <button class="odd-btn" [disabled]="!isOpen(game)" (click)="choose(game, 'away')">
+              <span class="odd-label">Fora</span>
+              <span class="odd-value">{{ game.odds.away | number: '1.2-2' }}</span>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+<!-- Ticket de aposta (modal) -->
+@if (selectedGame(); as game) {
+  <div class="modal-backdrop" (click)="closeTicket()">
+    <div class="card modal" (click)="$event.stopPropagation()">
+      <h2>Confirmar aposta</h2>
+      <p class="muted">{{ game.homeTeam }} × {{ game.awayTeam }}</p>
+
+      <div class="ticket-pick">
+        Palpite: <strong>{{ pickLabel(game, selectedPick()!) }}</strong>
+        <span class="badge badge-stage">odd {{ game.odds[selectedPick()!] | number: '1.2-2' }}</span>
+      </div>
+
+      <div class="field">
+        <label for="amount">Valor da aposta (R$)</label>
+        <input id="amount" class="input" type="number" min="1" [ngModel]="amount()"
+               (ngModelChange)="amount.set($event)" />
+      </div>
+
+      <div class="potential">
+        Retorno potencial: <strong>R$ {{ potentialReturn() | number: '1.2-2' }}</strong>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-ghost" (click)="closeTicket()">Cancelar</button>
+        <button class="btn btn-primary" (click)="confirmBet()">Apostar</button>
+      </div>
+    </div>
+  </div>
+}

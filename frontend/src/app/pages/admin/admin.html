@@ -1,0 +1,66 @@
+<div class="page">
+  <h1 class="page-title">Painel do Administrador</h1>
+  <p class="page-subtitle">
+    Registre o placar dos jogos. Ao encerrar, as apostas são liquidadas automaticamente
+    (acertos creditam o prêmio no saldo do apostador).
+  </p>
+
+  @if (feedback(); as fb) {
+    <div class="alert" [class.alert-success]="fb.type === 'success'" [class.alert-error]="fb.type === 'error'">
+      {{ fb.text }}
+    </div>
+  }
+
+  @if (loading()) {
+    <p class="muted">Carregando...</p>
+  } @else {
+    <div class="card table-card">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Jogo</th>
+            <th>Fase</th>
+            <th>Data</th>
+            <th>Placar</th>
+            <th>Situação</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (game of games(); track game._id) {
+            <tr>
+              <td class="game-cell">{{ game.homeTeam }} × {{ game.awayTeam }}</td>
+              <td class="muted">{{ game.stage }}</td>
+              <td class="muted">{{ game.matchDate | date: 'dd/MM HH:mm' }}</td>
+              <td>
+                @if (game.status === 'encerrado') {
+                  <strong>{{ game.score.home }} × {{ game.score.away }}</strong>
+                } @else {
+                  <div class="score-inputs">
+                    <input class="input score-input" type="number" min="0"
+                           [(ngModel)]="scores[game._id].home" />
+                    <span>×</span>
+                    <input class="input score-input" type="number" min="0"
+                           [(ngModel)]="scores[game._id].away" />
+                  </div>
+                }
+              </td>
+              <td>
+                @if (game.status === 'encerrado') {
+                  <span class="badge badge-lose">Encerrado</span>
+                } @else {
+                  <span class="badge badge-win">Agendado</span>
+                }
+              </td>
+              <td>
+                @if (game.status !== 'encerrado') {
+                  <button class="btn btn-primary btn-sm" (click)="settle(game)">Encerrar</button>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

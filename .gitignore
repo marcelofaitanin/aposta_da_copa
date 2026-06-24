@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+**/node_modules/
+
+# Variáveis de ambiente (contém segredos)
+.env
+backend/.env
+
+# Builds do Angular
+frontend/dist/
+frontend/.angular/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Cache de testes
+coverage/

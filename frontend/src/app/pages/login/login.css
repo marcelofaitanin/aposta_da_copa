@@ -1,0 +1,31 @@
+.auth-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+}
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+}
+.auth-foot {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.auth-foot a {
+  color: var(--primary);
+  font-weight: 600;
+}
+.demo-box {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  background: #0e1626;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}

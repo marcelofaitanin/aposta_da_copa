@@ -1,0 +1,69 @@
+<div class="page">
+  <h1 class="page-title">Minhas Apostas</h1>
+  <p class="page-subtitle">Acompanhe seus palpites e resultados.</p>
+
+  @if (loading()) {
+    <p class="muted">Carregando...</p>
+  } @else if (bets().length === 0) {
+    <p class="muted">Você ainda não fez nenhuma aposta. Vá em "Jogos" para começar!</p>
+  } @else {
+    <div class="summary">
+      <div class="card summary-card">
+        <span class="muted">Total apostado</span>
+        <strong>R$ {{ totalApostado() | number: '1.2-2' }}</strong>
+      </div>
+      <div class="card summary-card">
+        <span class="muted">Total ganho</span>
+        <strong class="green">R$ {{ totalGanho() | number: '1.2-2' }}</strong>
+      </div>
+      <div class="card summary-card">
+        <span class="muted">Apostas</span>
+        <strong>{{ bets().length }}</strong>
+      </div>
+    </div>
+
+    <div class="card table-card">
+      <table class="bets-table">
+        <thead>
+          <tr>
+            <th>Jogo</th>
+            <th>Palpite</th>
+            <th>Valor</th>
+            <th>Odd</th>
+            <th>Situação</th>
+            <th>Retorno</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (bet of bets(); track bet._id) {
+            <tr>
+              <td>
+                <div class="bet-game">{{ bet.game.homeTeam }} × {{ bet.game.awayTeam }}</div>
+                <div class="muted bet-stage">{{ bet.game.stage }}</div>
+              </td>
+              <td>{{ pickLabel(bet) }}</td>
+              <td>R$ {{ bet.amount | number: '1.2-2' }}</td>
+              <td>{{ bet.oddAtBet | number: '1.2-2' }}</td>
+              <td>
+                @switch (bet.status) {
+                  @case ('ganha') { <span class="badge badge-win">Ganha</span> }
+                  @case ('perdida') { <span class="badge badge-lose">Perdida</span> }
+                  @default { <span class="badge badge-pending">Pendente</span> }
+                }
+              </td>
+              <td>
+                @if (bet.status === 'ganha') {
+                  <span class="green">+ R$ {{ bet.payout | number: '1.2-2' }}</span>
+                } @else if (bet.status === 'perdida') {
+                  <span class="red">— R$ {{ bet.amount | number: '1.2-2' }}</span>
+                } @else {
+                  <span class="muted">—</span>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

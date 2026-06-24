@@ -1,0 +1,41 @@
+<header class="navbar">
+  <a class="brand" routerLink="/jogos">
+    <span class="brand-icon">⚽</span>
+    <span class="brand-text">Copa<strong>Apostas</strong> 2026</span>
+  </a>
+
+  <nav class="nav-links">
+    <a routerLink="/jogos" routerLinkActive="active">Jogos</a>
+
+    @if (auth.isLoggedIn()) {
+      <a routerLink="/minhas-apostas" routerLinkActive="active">Minhas Apostas</a>
+    }
+    @if (auth.isAdmin()) {
+      <a routerLink="/admin" routerLinkActive="active">Admin</a>
+    }
+  </nav>
+
+  <div class="nav-right">
+    @if (auth.isLoggedIn()) {
+      <span class="balance" title="Saldo de moedas virtuais">
+        💰 R$ {{ auth.user()?.balance | number: '1.2-2' }}
+      </span>
+      <span class="user-name">Olá, {{ auth.user()?.name }}</span>
+      <button class="btn btn-ghost" (click)="logout()">Sair</button>
+    } @else {
+      <a class="btn btn-ghost" routerLink="/login">Entrar</a>
+      <a class="btn btn-primary" routerLink="/cadastro">Criar conta</a>
+    }
+  </div>
+</header>
+
+<main class="content">
+  <router-outlet />
+</main>
+
+<footer class="footer">
+  <p>
+    CopaApostas 2026 — Projeto acadêmico (MEAN Stack). Apostas com moedas
+    <strong>virtuais</strong>, sem dinheiro real. 🔞 Jogue com responsabilidade.
+  </p>
+</footer>

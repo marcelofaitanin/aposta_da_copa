@@ -1,0 +1,38 @@
+<div class="auth-wrap">
+  <div class="card auth-card">
+    <h1 class="page-title">Entrar</h1>
+    <p class="page-subtitle">Acesse sua conta para apostar nos jogos da Copa 2026.</p>
+
+    @if (error()) {
+      <div class="alert alert-error">{{ error() }}</div>
+    }
+
+    <form (ngSubmit)="submit()">
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" class="input" type="email" name="email"
+               [(ngModel)]="email" required placeholder="voce@email.com" />
+      </div>
+
+      <div class="field">
+        <label for="password">Senha</label>
+        <input id="password" class="input" type="password" name="password"
+               [(ngModel)]="password" required placeholder="••••••" />
+      </div>
+
+      <button class="btn btn-primary btn-block" type="submit" [disabled]="loading()">
+        {{ loading() ? 'Entrando...' : 'Entrar' }}
+      </button>
+    </form>
+
+    <p class="auth-foot muted">
+      Não tem conta? <a routerLink="/cadastro">Criar conta</a>
+    </p>
+
+    <div class="demo-box">
+      <strong>Contas de teste:</strong>
+      <span>👤 joao&#64;email.com / 123456</span>
+      <span>🛠️ admin&#64;copa.com / admin123</span>
+    </div>
+  </div>
+</div>
