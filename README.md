@@ -100,8 +100,8 @@ Instale antes de começar:
 ## Como Clonar o Projeto
 
 ```bash
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-cd SEU-REPOSITORIO
+git clone https://github.com/marcelofaitanin/aposta_da_copa.git
+cd aposta_da_copa
 ```
 
 ---
