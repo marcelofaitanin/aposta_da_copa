@@ -237,7 +237,7 @@ A modelagem completa está na pasta [`docs/`](docs/):
 
 ## Informações Acadêmicas
 
-- **Professor:** _[preencher]_
-- **Curso:** _[preencher]_
-- **Disciplina:** Desenvolvimento Web III
+- **Professor:** _[Wesley Pereira da Silva]_
+- **Curso:** _[Análise e Desenvolvimento de Sistemas]_
+- **Disciplina:** Desenvolvimento de Apliicações Web III
 - **Semestre:** 2026/1
