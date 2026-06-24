@@ -110,14 +110,14 @@ encerrado, `score`, `result` e `status` são preenchidos.
 ```json
 {
   "_id": { "$oid": "6a3c4bcb23b15d630e257c78" },
-  "homeTeam": "Brasil",
-  "awayTeam": "Croácia",
+  "homeTeam": "Equador",
+  "awayTeam": "Alemanha",
   "stage": "Fase de Grupos",
-  "group": "Grupo F",
-  "stadium": "SoFi Stadium",
-  "city": "Los Angeles, EUA",
-  "matchDate": { "$date": "2026-06-25T22:00:00.000Z" },
-  "odds": { "home": 1.65, "draw": 3.7, "away": 5.2 },
+  "group": "Grupo E",
+  "stadium": "MetLife Stadium",
+  "city": "Nova York/Nova Jersey, EUA",
+  "matchDate": { "$date": "2026-06-25T16:00:00.000Z" },
+  "odds": { "home": 4.0, "draw": 3.4, "away": 1.85 },
   "status": "agendado",
   "score": { "home": null, "away": null },
   "result": null
@@ -129,13 +129,14 @@ encerrado, `score`, `result` e `status` são preenchidos.
 ```json
 {
   "_id": { "$oid": "6a3c4bcb23b15d630e257c88" },
-  "homeTeam": "Brasil",
-  "awayTeam": "França",
-  "stage": "Final",
-  "stadium": "MetLife Stadium",
-  "city": "Nova York/Nova Jersey, EUA",
-  "matchDate": { "$date": "2026-07-19T16:00:00.000Z" },
-  "odds": { "home": 2.45, "draw": 3.2, "away": 2.85 },
+  "homeTeam": "Japão",
+  "awayTeam": "Suécia",
+  "stage": "Fase de Grupos",
+  "group": "Grupo F",
+  "stadium": "AT&T Stadium",
+  "city": "Dallas, EUA",
+  "matchDate": { "$date": "2026-06-25T19:00:00.000Z" },
+  "odds": { "home": 2.3, "draw": 3.2, "away": 3.0 },
   "status": "encerrado",
   "score": { "home": 2, "away": 1 },
   "result": "home"
@@ -169,11 +170,11 @@ que mudanças posteriores nas odds do jogo não afetem apostas já feitas.
   "_id": { "$oid": "6a3c4bcb23b15d630e257c90" },
   "user": { "$oid": "6a3c4bcb23b15d630e257c70" },
   "game": { "$oid": "6a3c4bcb23b15d630e257c78" },
-  "pick": "home",
-  "amount": 200,
-  "oddAtBet": 1.65,
+  "pick": "away",
+  "amount": 100,
+  "oddAtBet": 1.85,
   "status": "ganha",
-  "payout": 330,
+  "payout": 185,
   "createdAt": { "$date": "2026-06-24T21:30:00.000Z" }
 }
 ```

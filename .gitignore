@@ -21,5 +21,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Configuração local da ferramenta de preview (não faz parte do projeto)
+.claude/
+
 # Cache de testes
 coverage/
